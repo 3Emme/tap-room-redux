@@ -16,7 +16,7 @@ class KegControl extends React.Component {
       editing: false,
     };
     this.handleForwardClick = this.handleForwardClick.bind(this);
-    this.handleBackClick = this.handleBackClick.bind(this); 
+    this.handleButtonClick = this.handleButtonClick.bind(this); 
   }
 
   handleEditingKegInList = (kegToEdit) => {
@@ -46,7 +46,7 @@ handleAddingNewKegToList = (newKeg) => {
                 formVisibleOnPage:false});
 }
 
-  handleBackClick = () => {
+  handleButtonClick = () => {
     
     if (this.state.selectedKeg != null) {
       this.setState({
@@ -84,8 +84,6 @@ handleAddingNewKegToList = (newKeg) => {
 
   render() {
     let currentVisibleState = null;
-    let buttonBackText = null;
-    let buttonForwardText = null;
     let addKegButton = null;
     let buttonText = null;
     
@@ -93,31 +91,28 @@ handleAddingNewKegToList = (newKeg) => {
       currentVisibleState = <EditKegForm
       keg = {this.state.selectedKeg}
       onEditKeg = {this.handleEditingKegInList} />
-      buttonText = "Return to Keg List";
+      buttonText = "Cancel Edit";
     }
     else if (this.state.selectedKeg != null){
       currentVisibleState = <KegDetail
       keg = {this.state.selectedKeg}
       onClickingDelete = {this.handleDeletingKeg}
       onClickingEdit = {this.handleEditClick}/>
-      buttonBackText = "Return to Keg List"
+      buttonText = "Return to Keg List"
     }
     else if (this.state.formVisibleOnPage) {
       currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}/>;
-      buttonBackText = "Return to Minutes"; 
-      buttonForwardText = "Return to Keg List"; 
+      buttonText = "Cancel Add Keg"; 
     } 
     else {
       currentVisibleState = <KegList kegList={this.state.masterKegList} onKegSelection={this.handleChangingSelectedKeg}/>;
-      buttonBackText = "Add Keg"; 
-      buttonForwardText = "Go to Steps"; 
+      buttonText = "Add Keg"; 
       addKegButton = <button onClick={this.handleForwardClick}>Add keg</button> 
     }
     return (
       <React.Fragment>
         {currentVisibleState}
-        <button onClick={this.handleBackClick}>{buttonBackText}</button>
-        <button onClick={this.handleForwardClick}>{buttonForwardText}</button>
+        <button onClick={this.handleButtonClick}>{buttonText}</button>
       </React.Fragment>
     );
   }
