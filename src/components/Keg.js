@@ -10,9 +10,9 @@ function Keg(props){
       
       <div style = {kegStyles}>
         <div onClick = {() => props.whenKegClicked(props.id)}>
-          <h4>{props.price}</h4>
-          <h3>{props.brand} - {props.name}</h3>
-          <p><em>{props.flavor}</em></p>
+          <h3>{props.name}</h3>
+          <p>{props.brand} - <em>{props.flavor}</em></p>
+          <h4>Price: ${props.price}.00</h4>
           <hr/>
         </div>
       </div>
