@@ -6,7 +6,13 @@ import ReusableForm from "./ReusableForm";
 function NewKegForm(props){
   function handleNewKegFormSubmission(event){
     event.preventDefault();
-    props.onNewKegCreation({name: event.target.name.value, brand: event.target.brand.value, flavor: event.target.flavor.value, price: event.target.price.value, id: v4()});
+    props.onNewKegCreation({
+      name: event.target.name.value, 
+      brand: event.target.brand.value, 
+      flavor: event.target.flavor.value, 
+      price: event.target.price.value, 
+      quantity: 124, // test for quantity
+      id: v4()});
     console.log(event.target.name.value);
     console.log(event.target.brand.value);
     console.log(event.target.flavor.value);
