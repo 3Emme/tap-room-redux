@@ -11,13 +11,14 @@ function NewKegForm(props){
       brand: event.target.brand.value, 
       flavor: event.target.flavor.value, 
       price: event.target.price.value, 
-      quantity: 124, // test for quantity
+      quantity: event.target.quantity.value, // test for quantity
       id: v4()});
     console.log(event.target.name.value);
     console.log(event.target.brand.value);
     console.log(event.target.flavor.value);
     console.log(event.target.price.value);
     console.log(event.target.id.value);
+    console.log(event.target.quantity.value); // test for quantity
   }
   return (
     <React.Fragment>
