@@ -19,7 +19,7 @@ Here are some user stories to get you started. The application should have the f
 As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store). [Complete]
 As a user, I want to submit a form to add a new keg to a list. [Complete]
 As a user, I want to be able to click on a keg to see its detail page. [Complete]
-As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints. [Incomplete]
+As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints. [Complete]
 As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0. [Incomplete]
 
 ## Project Objectives:
@@ -28,8 +28,8 @@ As a user, I want to be able to click a button next to a keg whenever I sell a p
   * Functional and class components are used correctly. [Complete]
   * Application effectively uses local and shared state. [Complete]
   * Props are used correctly and always include PropTypes. [Complete]
-  * README includes an accurate representation of the application's component tree. [Incomplete]
-  * Project was submitted by the deadline. [Incomplete]
+  * README includes an accurate representation of the application's component tree. [Complete]
+  * Project was submitted by the deadline. [Complete]
   * Project demonstrates an understanding of this week's concepts. If prompted, you can discuss your code with an instructor using the correct terminology. [Complete]
 
 ## Specs
@@ -39,6 +39,11 @@ As a user, I want to be able to click a button next to a keg whenever I sell a p
     * Read: [Works]
     * Update: [Works]
     * Destroy: [Works]
+
+  2.[] Quantity for Keg
+    * Add: [Incomplete]
+    * Subtract: [Incomplete]
+    * Update: [Incomplete]
 
 ## Setup/Installation Requirements
 
