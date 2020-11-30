@@ -2,9 +2,11 @@ import React from "react";
 
 function Header(){
   return (
-    
-    <h1>Kombucha Kegs</h1>
-    
+    <React.Fragment>
+      <div class="header">
+        <h1>Kombucha Kegs</h1>
+      </div>
+    </React.Fragment>
   );
 }
 
