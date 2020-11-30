@@ -1,12 +1,12 @@
-# __ParksApi__
+# __tap-room__
 
-#### __An API for states and national parks. October 30, 2020__
+#### __A site for managing kegs in an all-kombucha taproom. November 20, 2020__
 
 #### By _**Emme Buentiempo**_
 
 ## Description
 
-This application was created as an Epicodus assignment, with the intent to have it serve as a demonstration of knowledge after the program's 13th week. For the time being this README will serve as a checklist to demonstrate the satisfaction of all project requirements and objectives. 
+This application was created as an Epicodus assignment, with the intent to have it serve as a demonstration of knowledge after the program's 16th week. For the time being this README will serve as a checklist to demonstrate the satisfaction of all project requirements and objectives. 
 
 ## Project requirements:
 
@@ -20,11 +20,11 @@ As a user, I want to see a list/menu of all available kegs. For each keg, I want
 As a user, I want to submit a form to add a new keg to a list. [Complete]
 As a user, I want to be able to click on a keg to see its detail page. [Complete]
 As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints. [Complete]
-As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0. [Incomplete]
+As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0. [Complete]
 
 ## Project Objectives:
 
-  * Application compiles and runs and all required functionality is included. [Incomplete]
+  * Application compiles and runs and all required functionality is included. [Complete]
   * Functional and class components are used correctly. [Complete]
   * Application effectively uses local and shared state. [Complete]
   * Props are used correctly and always include PropTypes. [Complete]
@@ -40,14 +40,18 @@ As a user, I want to be able to click a button next to a keg whenever I sell a p
     * Update: [Works]
     * Destroy: [Works]
 
-  2.[] Quantity for Keg
-    * Add: [Incomplete]
-    * Subtract: [Incomplete]
-    * Update: [Incomplete]
+  2.[X] Quantity for Keg
+    * Subtract: [Works]
+    * Alert: [Works]
 
 ## Setup/Installation Requirements
 
-TBD
+* _open terminal_
+* _type "cd desktop", then press enter_
+* _type "git clone https://github.com/3emme/tap-room", then press enter_
+* _locate and open folder on desktop named "tap-room" with your console of choice_
+* _in console, run $npm install_
+* _in console, run $npm start_
 
 ## Support and contact details
 
@@ -55,84 +59,12 @@ _Please do not hesitate to contact me at emmettbuentiempo@gmail.com should you h
 
 ## Technologies Used
 
-* _C#_
+* _JavaScript_
+* _React_
+* _Node.Js_
+* _CSS_
 
 ### License
 
 Copyright (c) 2020 **_Emme Buentiempo_**
 This software is licensed under the MIT license.
-
-
-
-
------------------------------------------
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
