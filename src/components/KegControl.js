@@ -30,6 +30,20 @@ class KegControl extends React.Component {
       });
   }
 
+  handlePourCLick = (id) => {
+    const editedMasterKegList = this.state.masterKegList;
+    for (const keg of editedMasterKegList) {
+      if (keg.id === id) {
+        if (keg.quantity > 0) {
+          keg.quantity -= 1;
+        } else if (keg.quantity <= 0) {
+          alert("Sorry, we're all out of "+keg.flavor)
+        }
+      }
+    }
+    this.setState({masterKegList: editedMasterKegList});
+  }
+
 handleEditClick = () => {
   console.log("handleEditClick Reached!");
   this.setState({editing: true});
@@ -97,7 +111,8 @@ handleAddingNewKegToList = (newKeg) => {
       currentVisibleState = <KegDetail
       keg = {this.state.selectedKeg}
       onClickingDelete = {this.handleDeletingKeg}
-      onClickingEdit = {this.handleEditClick}/>
+      onClickingEdit = {this.handleEditClick}
+      onClickingPour = {this.handlePourCLick}/>
       buttonText = "Return to Keg List"
     }
     else if (this.state.formVisibleOnPage) {
