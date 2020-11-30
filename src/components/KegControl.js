@@ -11,7 +11,7 @@ class KegControl extends React.Component {
     this.state = {
       kegListVisibleOnPage: true,
       formVisibleOnPage: false,
-      masterKegList: [],
+      masterKegList: [{name: "Main Bar 1", brand: "Quality Booch", flavor: "Persimmon", price: "9", quantity: "124", id:"1" }],
       selectedKeg: null,
       editing: false,
     };
@@ -127,7 +127,7 @@ handleAddingNewKegToList = (newKeg) => {
     return (
       <React.Fragment>
         {currentVisibleState}
-        <button onClick={this.handleButtonClick}>{buttonText}</button>
+        <button class="addKegButton" onClick={this.handleButtonClick}>{buttonText}</button>
       </React.Fragment>
     );
   }

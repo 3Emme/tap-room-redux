@@ -11,7 +11,6 @@ function Keg(props){
           <p>{props.brand} - <em>{props.flavor}</em></p>
           <h4>Price: ${props.price}.00</h4>
           <h4>Quantity Left: {props.quantity}</h4> {/* test for quantity*/}
-          <hr/>
         </div>
       </div>
     </React.Fragment>

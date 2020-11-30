@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #59656D;
+  height: 100%;
 }
 
 code {
@@ -20,4 +21,14 @@ code {
 
 .keg {
   background-color:#D46A7E;
+  text-align: center;
+  outline: 5px dotted  #FF964F;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.addKegButton {
+  margin:0 auto;
+  display:block;
+  margin-top: 10px;
 }
