@@ -9,19 +9,19 @@ describe('masterKegListReducer', () => {
     2: {name: "Main Bar 2", brand: "Quality Booch", flavor: "Lemon", price: "9", quantity: "124", id:"2" }
   }
 
-  const ticketData = {name: "Main Bar 1", brand: "Quality Booch", flavor: "Persimmon", price: "9", quantity: "124", id:"1" };
+  const kegData = {name: "Main Bar 1", brand: "Quality Booch", flavor: "Persimmon", price: "9", quantity: "124", id:"1" };
 
   test('Should return default state if no action type is recognized', () => {
     expect(masterKegListReducer({}, { type: null })).toEqual({});
   });
 
   test('Should successfully add new ticket data to masterKegList', () => {
-    const { name, location, issue, id } = ticketData;
+    const { name, brand, flavor, price, quantity, id } = kegData;
     action = {
       type: 'ADD_KEG',
       name: name,
-      brand: location,
-      flavor: issue,
+      brand: brand,
+      flavor: flavor,
       price: price,
       quantity: quantity,
       id: id
@@ -29,8 +29,8 @@ describe('masterKegListReducer', () => {
     expect(masterKegListReducer({}, action)).toEqual({
       [id] : {
         name: name,
-        brand: location,
-        flavor: issue,
+        brand: brand,
+        flavor: flavor,
         price: price,
         quantity: quantity,
         id: id
