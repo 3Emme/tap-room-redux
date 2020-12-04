@@ -27,6 +27,17 @@ export default (state = [{name: "Main Bar 1", brand: "Quality Booch", flavor: "P
         id: id
       }
     });
+  case 'POUR_KEG':
+    return Object.assign({}, state, {
+      [id]: {
+        name: name,
+        brand: brand,
+        flavor: flavor,
+        price: price,
+        quantity: quantity-1,
+        id: id
+      }
+    });
   default:
     return state;
   }
