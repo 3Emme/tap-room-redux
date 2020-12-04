@@ -87,8 +87,8 @@ describe('masterKegListReducer', () => {
         name: name,
         brand: brand,
         flavor: flavor,
-        price: price-1,
-        quantity: quantity,
+        price: price,
+        quantity: quantity-1,
         id: id
       }
     });
