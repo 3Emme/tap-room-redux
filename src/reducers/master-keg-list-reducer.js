@@ -16,6 +16,17 @@ export default (state = [{name: "Main Bar 1", brand: "Quality Booch", flavor: "P
     const newState = { ...state };
     delete newState[id];
     return newState;
+  case 'UPDATE_KEG':
+    return Object.assign({}, state, {
+      [id]: {
+        name: name,
+        brand: brand,
+        flavor: flavor,
+        price: price,
+        quantity: quantity,
+        id: id
+      }
+    });
   default:
     return state;
   }
