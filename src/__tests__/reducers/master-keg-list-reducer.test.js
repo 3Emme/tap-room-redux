@@ -48,4 +48,26 @@ describe('masterKegListReducer', () => {
     });
   });
 
+  test('Should successfully update a keg in masterKegList', () => {
+    const { name, brand, flavor, price, quantity, id } = kegData;
+    action = {
+      type: 'UPDATE_KEG',
+      name: name,
+      brand: brand,
+      flavor: flavor,
+      price: price,
+      quantity: quantity,
+      id: id
+    };
+    expect(masterKegListReducer({}, action)).toEqual({
+      [id] : {
+        name: name,
+        brand: brand,
+        flavor: flavor,
+        price: price,
+        quantity: quantity,
+        id: id
+      }
+    });
+  });
 });
