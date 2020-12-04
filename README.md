@@ -53,6 +53,10 @@ As a user, I want to be able to click a button next to a keg whenever I sell a p
 * _in console, run $npm install_
 * _in console, run $npm start_
 
+etc etc
+npm install --save-exact react-scripts@3.2.0
+npm install redux@4.0.5 react-redux@7.1.3
+
 ## Support and contact details
 
 _Please do not hesitate to contact me at emmettbuentiempo@gmail.com should you have any questions regarding this project_
