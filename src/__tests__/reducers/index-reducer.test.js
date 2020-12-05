@@ -96,4 +96,27 @@ describe ("rootReducer", () => {
       }
     });
   });
+
+  test('Should successfully reduce the quantity of a keg in masterKegList', () => {
+    const { name, brand, flavor, price, quantity, id } = kegData;
+    action = {
+      type: 'POUR_KEG',
+      name: name,
+      brand: brand,
+      flavor: flavor,
+      price: price,
+      quantity: quantity,
+      id: id
+    };
+    expect(masterKegListReducer({}, action)).toEqual({
+      [id] : {
+        name: name,
+        brand: brand,
+        flavor: flavor,
+        price: price,
+        quantity: quantity-1,
+        id: id
+      }
+    });
+  });
 });
