@@ -140,4 +140,11 @@ describe ("rootReducer", () => {
       id: id
     });
   });
+
+  test('Should successfully update selected keg to null when delecting', () => {
+    action = {
+      type: 'DESELECT_KEG',
+    };
+    expect(selectedKegReducer({}, action)).toEqual(null);
+  });
 });
