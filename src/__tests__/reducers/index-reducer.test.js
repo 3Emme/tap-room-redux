@@ -63,4 +63,14 @@ describe ("rootReducer", () => {
       }
     });
   });
+
+  test('Should successfully delete a keg', () => {
+    action = {
+      type: 'DELETE_KEG',
+      id: 1
+    };
+    expect(masterKegListReducer(currentState, action)).toEqual({
+      2: {name: "Main Bar 2", brand: "Quality Booch", flavor: "Lemon", price: "9", quantity: "124", id:"2" }
+    });
+  });
 });
