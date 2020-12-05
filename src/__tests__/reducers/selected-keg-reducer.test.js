@@ -1,6 +1,6 @@
 import selectedKegReducer from '../../reducers/selected-keg-reducer';
 
-describe('selectedKegListReducer', () => {
+describe('selectedKegReducer', () => {
 
   let action;
   [{name: "Main Bar 1", brand: "Quality Booch", flavor: "Persimmon", price: "9", quantity: "124", id:"1" }]
