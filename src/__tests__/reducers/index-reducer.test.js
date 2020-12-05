@@ -26,4 +26,8 @@ describe ("rootReducer", () => {
   test('Should toggle form visibility state to true', () => {
     expect(formVisibleOnPageReducer(false, { type: 'TOGGLE_FORM' })).toEqual(true);
   });
+
+  test('Should toggle keg list visibility state to true', () => {
+    expect(kegListVisibleOnPageReducer(true, { type: 'TOGGLE_KEG_LIST' })).toEqual(false);
+  });
 });
