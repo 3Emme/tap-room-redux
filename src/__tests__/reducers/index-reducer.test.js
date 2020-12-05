@@ -22,5 +22,8 @@ describe ("rootReducer", () => {
   test('Confirm TOGGLE_EDITING works for editingReducer', () => {
     expect(editingReducer(false, { type: 'TOGGLE_EDITING' })).toEqual(true);
   });
-  
+
+  test('Should toggle form visibility state to true', () => {
+    expect(formVisibleOnPageReducer(false, { type: 'TOGGLE_FORM' })).toEqual(true);
+  });
 });
