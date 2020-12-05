@@ -18,4 +18,9 @@ describe ("rootReducer", () => {
       editing: false,
     });
   });
+
+  test('Confirm TOGGLE_EDITING works for editingReducer', () => {
+    expect(editingReducer(false, { type: 'TOGGLE_EDITING' })).toEqual(true);
+  });
+  
 });
