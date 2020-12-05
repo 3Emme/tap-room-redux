@@ -35,4 +35,18 @@ describe('selectedKegListReducer', () => {
       id: id
     });
   });
+
+  test('Should successfully update selected keg to null when delecting', () => {
+    // const { name, brand, flavor, price, quantity, id } = kegData;
+    action = {
+      type: 'DESELECT_KEG',
+      // name: name,
+      // brand: brand,
+      // flavor: flavor,
+      // price: price,
+      // quantity: quantity,
+      // id: id
+    };
+    expect(selectedKegReducer({}, action)).toEqual(null);
+  });
 });
