@@ -119,4 +119,25 @@ describe ("rootReducer", () => {
       }
     });
   });
+
+  test('Should successfully update selected keg', () => {
+    const { name, brand, flavor, price, quantity, id } = kegData;
+    action = {
+      type: 'SELECT_KEG',
+      name: name,
+      brand: brand,
+      flavor: flavor,
+      price: price,
+      quantity: quantity,
+      id: id
+    };
+    expect(selectedKegReducer({}, action)).toEqual({
+      name: name,
+      brand: brand,
+      flavor: flavor,
+      price: price,
+      quantity: quantity,
+      id: id
+    });
+  });
 });
