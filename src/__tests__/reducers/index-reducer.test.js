@@ -9,6 +9,16 @@ import { createStore } from 'redux';
 let store = createStore(rootReducer);
 
 describe ("rootReducer", () => {
+
+  let action;
+  [{name: "Main Bar 1", brand: "Quality Booch", flavor: "Persimmon", price: "9", quantity: "124", id:"1" }]
+  const currentState = {
+    1: {name: "Main Bar 1", brand: "Quality Booch", flavor: "Persimmon", price: "9", quantity: "124", id:"1" },
+    2: {name: "Main Bar 2", brand: "Quality Booch", flavor: "Lemon", price: "9", quantity: "124", id:"2" }
+  }
+
+  const kegData = {name: "Main Bar 1", brand: "Quality Booch", flavor: "Persimmon", price: "9", quantity: "124", id:"1" };
+
   test('Should return default state if no action type is recognized', () => {
     expect(rootReducer({}, { type: null })).toEqual({
       kegListVisibleOnPage: true,
@@ -29,5 +39,28 @@ describe ("rootReducer", () => {
 
   test('Should toggle keg list visibility state to true', () => {
     expect(kegListVisibleOnPageReducer(true, { type: 'TOGGLE_KEG_LIST' })).toEqual(false);
+  });
+
+  test('Should successfully add new ticket data to masterKegList', () => {
+    const { name, brand, flavor, price, quantity, id } = kegData;
+    action = {
+      type: 'ADD_KEG',
+      name: name,
+      brand: brand,
+      flavor: flavor,
+      price: price,
+      quantity: quantity,
+      id: id
+    };
+    expect(masterKegListReducer({}, action)).toEqual({
+      [id] : {
+        name: name,
+        brand: brand,
+        flavor: flavor,
+        price: price,
+        quantity: quantity,
+        id: id
+      }
+    });
   });
 });
