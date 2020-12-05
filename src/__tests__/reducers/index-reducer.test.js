@@ -73,4 +73,27 @@ describe ("rootReducer", () => {
       2: {name: "Main Bar 2", brand: "Quality Booch", flavor: "Lemon", price: "9", quantity: "124", id:"2" }
     });
   });
+
+  test('Should successfully update a keg in masterKegList', () => {
+    const { name, brand, flavor, price, quantity, id } = kegData;
+    action = {
+      type: 'UPDATE_KEG',
+      name: name,
+      brand: brand,
+      flavor: flavor,
+      price: price,
+      quantity: quantity,
+      id: id
+    };
+    expect(masterKegListReducer({}, action)).toEqual({
+      [id] : {
+        name: name,
+        brand: brand,
+        flavor: flavor,
+        price: price,
+        quantity: quantity,
+        id: id
+      }
+    });
+  });
 });
