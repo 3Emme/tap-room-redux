@@ -13,7 +13,7 @@ class KegControl extends React.Component {
     super(props);
     this.state = {
       // kegListVisibleOnPage: true,
-      formVisibleOnPage: false,
+      // formVisibleOnPage: false,
       masterKegList: [{name: "Main Bar 1", brand: "Quality Booch", flavor: "Persimmon", price: "9", quantity: "124", id:"1" }],
       selectedKeg: null,
       editing: false,
@@ -58,23 +58,34 @@ handleChangingSelectedKeg = (id) => {
 }
   
 handleAddingNewKegToList = (newKeg) => {
+  const { dispatch } = this.props;
   const newMasterKegList = this.state.masterKegList.concat(newKeg);
-  this.setState({masterKegList: newMasterKegList,
-                formVisibleOnPage:false});
+  // this.setState({masterKegList: newMasterKegList,
+  //               formVisibleOnPage:false});
+  this.setState({masterKegList: newMasterKegList});
+  const action1 = {
+    type: 'TOGGLE_FORM'
+  }
+  dispatch(action1);
 }
 
   handleButtonClick = () => {
-    
+    const { dispatch } = this.props;
+    const action1 = {
+      type: 'TOGGLE_FORM'
+    }
     if (this.state.selectedKeg != null) {
+      dispatch(action1);
       this.setState({
-        formVisibleOnPage: false,
+        // formVisibleOnPage: false,
         selectedKeg: null,
         editing: false
       });
     } else {
-      this.setState(prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage,
-      }));
+      dispatch(action1);
+      // this.setState(prevState => ({
+      //   formVisibleOnPage: !prevState.formVisibleOnPage,
+      // }));
     }
   }
 
@@ -92,6 +103,10 @@ handleAddingNewKegToList = (newKeg) => {
       type: 'TOGGLE_KEG_LIST'
     }
     dispatch(action1);
+    const action2 = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(action2);
     // if(this.props.kegListVisibleOnPage){
     //   this.setState({kegListVisibleOnPage: false, stepsVisibleOnPage: true})
     //   return;
@@ -100,14 +115,14 @@ handleAddingNewKegToList = (newKeg) => {
     //   this.setState({formVisibleOnPage: false, kegListVisibleOnPage: true})
     //   return;
     // }
-    if(this.props.kegListVisibleOnPage){
-      this.setState({stepsVisibleOnPage: true})
-      return;
-    }
-    else {
-      this.setState({formVisibleOnPage: false})
-      return;
-    }
+    // if(this.props.kegListVisibleOnPage){
+    //   this.setState({stepsVisibleOnPage: true})
+    //   return;
+    // }
+    // else {
+    //   this.setState({formVisibleOnPage: false})
+    //   return;
+    // }
   }
   
 
@@ -130,7 +145,7 @@ handleAddingNewKegToList = (newKeg) => {
       onClickingPour = {this.handlePourCLick}/>
       buttonText = "Return to Keg List"
     }
-    else if (this.state.formVisibleOnPage) {
+    else if (this.props.formVisibleOnPage) {
       currentVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList}/>;
       buttonText = "Cancel Add Keg"; 
     } 
@@ -150,7 +165,7 @@ handleAddingNewKegToList = (newKeg) => {
 
 KegControl.propTypes = {
   kegListVisibleOnPage: PropTypes.bool,
-  // formVisibleOnPage: PropTypes.bool,
+  formVisibleOnPage: PropTypes.bool,
   // masterKegList: PropTypes.array,
   // selectedKeg: PropTypes.object, // unsure?
   // editing: PropTypes.bool,
@@ -159,7 +174,7 @@ KegControl.propTypes = {
 const mapStateToProps = state => {
   return {
     kegListVisibleOnPage: state.kegListVisibleOnPage,
-    // formVisibleOnPage: state.formVisibleOnPage,
+    formVisibleOnPage: state.formVisibleOnPage,
     // masterKegList: state.masterKegList,
     // selectedKeg: state.selectedKeg,
     // editing: state.editing,
