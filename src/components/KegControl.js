@@ -3,13 +3,16 @@ import NewKegForm from "./NewKegForm";
 import KegList from "./KegList";
 import KegDetail from "./KegDetail";
 import EditKegForm from "./EditKegForm";
+import PropTypes from 'prop-types';
+import { connect } from "react-redux";
+
 
 class KegControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      kegListVisibleOnPage: true,
+      // kegListVisibleOnPage: true,
       formVisibleOnPage: false,
       masterKegList: [{name: "Main Bar 1", brand: "Quality Booch", flavor: "Persimmon", price: "9", quantity: "124", id:"1" }],
       selectedKeg: null,
@@ -84,13 +87,25 @@ handleAddingNewKegToList = (newKeg) => {
   }
 
   handleForwardClick = () => {
-    
-    if(this.state.kegListVisibleOnPage){
-      this.setState({kegListVisibleOnPage: false, stepsVisibleOnPage: true})
+    const { dispatch } = this.props;
+    const action1 = {
+      type: 'TOGGLE_KEG_LIST'
+    }
+    dispatch(action1);
+    // if(this.props.kegListVisibleOnPage){
+    //   this.setState({kegListVisibleOnPage: false, stepsVisibleOnPage: true})
+    //   return;
+    // }
+    // else {
+    //   this.setState({formVisibleOnPage: false, kegListVisibleOnPage: true})
+    //   return;
+    // }
+    if(this.props.kegListVisibleOnPage){
+      this.setState({stepsVisibleOnPage: true})
       return;
     }
     else {
-      this.setState({formVisibleOnPage: false, kegListVisibleOnPage: true})
+      this.setState({formVisibleOnPage: false})
       return;
     }
   }
@@ -132,5 +147,25 @@ handleAddingNewKegToList = (newKeg) => {
     );
   }
 } 
+
+KegControl.propTypes = {
+  kegListVisibleOnPage: PropTypes.bool,
+  // formVisibleOnPage: PropTypes.bool,
+  // masterKegList: PropTypes.array,
+  // selectedKeg: PropTypes.object, // unsure?
+  // editing: PropTypes.bool,
+}
+
+const mapStateToProps = state => {
+  return {
+    kegListVisibleOnPage: state.kegListVisibleOnPage,
+    // formVisibleOnPage: state.formVisibleOnPage,
+    // masterKegList: state.masterKegList,
+    // selectedKeg: state.selectedKeg,
+    // editing: state.editing,
+  }
+}
+
+KegControl = connect(mapStateToProps)(KegControl);
 
 export default KegControl;
