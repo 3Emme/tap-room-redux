@@ -35,7 +35,11 @@ class KegControl extends React.Component {
       const action1 = {
         type: 'TOGGLE_EDITING'
       };
+      const action2 = {
+        type: 'TOGGLE_KEG_LIST'
+      }
       dispatch(action1);
+      dispatch(action2);
   }
 
   handlePourCLick = (id) => {
@@ -59,11 +63,20 @@ handleEditClick = () => {
   const action1 = {
     type: 'TOGGLE_EDITING'
   };
+  const action2 = {
+    type: 'TOGGLE_KEG_LIST'
+  }
   dispatch(action1);
+  dispatch(action2);
 }
 
 handleChangingSelectedKeg = (id) => {
+  const { dispatch } = this.props;
   const selectedKeg = this.state.masterKegList.filter(keg=>keg.id === id)[0];
+  const action1 = {
+    type: 'TOGGLE_KEG_LIST'
+  }
+  dispatch(action1);
   this.setState({selectedKeg:selectedKeg});
 }
   
@@ -76,7 +89,11 @@ handleAddingNewKegToList = (newKeg) => {
   const action1 = {
     type: 'TOGGLE_FORM'
   }
+  const action2 = {
+    type: 'TOGGLE_KEG_LIST'
+  }
   dispatch(action1);
+  dispatch(action2);
 }
 
   handleButtonClick = () => {
@@ -87,9 +104,13 @@ handleAddingNewKegToList = (newKeg) => {
     const action2 = {
       type: 'TOGGLE_EDITING'
     };
+    const action3 = {
+      type: 'TOGGLE_KEG_LIST'
+    }
     if (this.state.selectedKeg != null) {
       dispatch(action1);
       dispatch(action2);
+      dispatch(action3);
       this.setState({
         // formVisibleOnPage: false,
         selectedKeg: null,
@@ -97,6 +118,7 @@ handleAddingNewKegToList = (newKeg) => {
       });
     } else {
       dispatch(action1);
+      dispatch(action3);
       // this.setState(prevState => ({
       //   formVisibleOnPage: !prevState.formVisibleOnPage,
       // }));
