@@ -63,11 +63,7 @@ handleEditClick = () => {
   const action1 = {
     type: 'TOGGLE_EDITING'
   };
-  const action2 = {
-    type: 'TOGGLE_KEG_LIST'
-  }
   dispatch(action1);
-  dispatch(action2);
 }
 
 handleChangingSelectedKeg = (id) => {
@@ -107,16 +103,18 @@ handleAddingNewKegToList = (newKeg) => {
     const action3 = {
       type: 'TOGGLE_KEG_LIST'
     }
-    if (this.state.selectedKeg != null) {
-      dispatch(action1);
+    if (this.props.editing === true){
       dispatch(action2);
+    } else if (this.state.selectedKeg != null) {
+      // dispatch(action1); dont think i need these two
+      // dispatch(action2);
       dispatch(action3);
       this.setState({
         // formVisibleOnPage: false,
         selectedKeg: null,
         // editing: false
       });
-    } else {
+    } else { //add keg button form
       dispatch(action1);
       dispatch(action3);
       // this.setState(prevState => ({
